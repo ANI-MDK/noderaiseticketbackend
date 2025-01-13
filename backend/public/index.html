@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Sl No</th>
+                <th>Method</th>
+                <th>URL</th>
+                <th>Payload</th>
+                <th>Remarks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>POST</td>
+                <td>{baseUrl}/login/auth</td>
+                <td>{username:"", password:"", token:""}</td>
+                <td>Authenticate & Authorize Users</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>GET</td>
+                <td>{baseUrl}/role/getrolelist</td>
+                <td>{none}</td>
+                <td>List of all the Roles</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>POST</td>
+                <td>{baseUrl}/role/createrole</td>
+                <td>{role_name: ""}</td>
+                <td>Add new Role</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>PUT</td>
+                <td>{baseUrl}/role//updaterole/{role_id}</td>
+                <td>{role_name:""}</td>
+                <td>Edit an existing Role</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>GET</td>
+                <td>{baseUrl}/project/getprojectlist</td>
+                <td>{none}</td>
+                <td>List of all the Projects</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>GET</td>
+                <td>{baseUrl}/project/updateprojectstatus/{project_id}</td>
+                <td>{none}</td>
+                <td>Change Status of an existing Project</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>POST</td>
+                <td>{baseUrl}/project/createproject</td>
+                <td>{project_name:"", project_code:"", project_location:"", project_state:"", project_description:""}</td>
+                <td>Add new Project</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>PUT</td>
+                <td>{baseUrl}/project/updateproject/{project_id}</td>
+                <td>{project_name:"", project_code:"", project_location:"", project_state:"", project_description:""}</td>
+                <td>Edit an existing Project</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>GET</td>
+                <td>{baseUrl}/user/getuserlist</td>
+                <td>{none}</td>
+                <td>List of all the Users</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>GET</td>
+                <td>{baseUrl}/user/deleteuser/{user_id}</td>
+                <td>{none}</td>
+                <td>Delete User</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>GET</td>
+                <td>{baseUrl}/user/updateuserstatus/{user_id}</td>
+                <td>{none}</td>
+                <td>Change Status of an existing User</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>POST</td>
+                <td>{baseUrl}/user/createuser</td>
+                <td>{user_name:"" ,user_role_id:"" ,user_email:"" ,user_password:""}</td>
+                <td>Add new User</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>PUT</td>
+                <td>{baseUrl}/user/updateuser/{user_id}</td>
+                <td>{user_name:"" ,user_role_id:"" ,user_email:""}</td>
+                <td>Edit an existing User</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>PUT</td>
+                <td>{baseUrl}/user/updateuserpassword/{user_id}</td>
+                <td>{user_password:""}</td>
+                <td>Change Password of an User</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>GET</td>
+                <td>{baseUrl}/user/getuserpermission/{user_id}</td>
+                <td>{none}</td>
+                <td>Get the list of all the Projects for a specific User for setting the permissions</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>POST</td>
+                <td>{baseUrl}/user/setuserpermission</td>
+                <td>{user_id:"", project_id:"", field_name:"", field_value:""}</td>
+                <td>Set User specific permissions for various projects</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>GET</td>
+                <td>{baseUrl}/category/getcategory</td>
+                <td>{none}</td>
+                <td>List of all the Categories & Sub-Categories</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>GET</td>
+                <td>{baseUrl}/drawing/getdrawinglist</td>
+                <td>{none}</td>
+                <td>List of all the Drawings</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>GET</td>
+                <td>{baseUrl}/drawing/deletedrawing/{drawing_id}</td>
+                <td>{none}</td>
+                <td>Delete Drawing</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>GET</td>
+                <td>{baseUrl}/drawing/updatedrawingstatus/{drawing_id}</td>
+                <td>{none}</td>
+                <td>Change Status of an existing Drawing</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>GET</td>
+                <td>{baseUrl}/project/getactiveprojectlist/can_add</td>
+                <td>{none}</td>
+                <td>Get User specific Projects to add a new Drawing</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>GET</td>
+                <td>{baseUrl}/category/getcategory/add</td>
+                <td>{none}</td>
+                <td>Get Category to add a new Drawing</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>GET</td>
+                <td>{baseUrl}/category/getsubcategory/add</td>
+                <td>{none}</td>
+                <td>Get Sub-Category to add a new Drawing</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>POST</td>
+                <td>{baseUrl}/drawing/createdrawing</td>
+                <td>{project_id:"", category_id:"", sub_category_id:"", drawing_description:"", drawing_number:"", drawing_page:"", drawing_pass_date:"", drawing_revision:"", drawing_revision_date:"", image_file:"", pdf_file:"", drawing_file:""}</td>
+                <td>Add a new Drawing</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>GET</td>
+                <td>{baseUrl}/project/getactiveprojectlist/can_edit</td>
+                <td>{none}</td>
+                <td>Get User specific Projects for editing the Drawing</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>GET</td>
+                <td>{baseUrl}/category/getcategory/edit/{project_id}</td>
+                <td>{none}</td>
+                <td>Get Category for editing a Drawing</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>GET</td>
+                <td>{baseUrl}/category/getsubcategory/edit/{project_id}</td>
+                <td>{none}</td>
+                <td>Get Sub-Category for editing a Drawing</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>PUT</td>
+                <td>{baseUrl}/drawing/updatedrawing/{drawing_id}</td>
+                <td>{project_id:"", category_id:"", sub_category_id:"", drawing_description:"", drawing_number:"", drawing_page:"", drawing_pass_date:"", drawing_revision:"", drawing_revision_date:"", image_file:"", pdf_file:"", drawing_file:"", is_delete_old_image:"", is_delete_old_pdf:"", is_delete_old_drawing:"", old_image_id:"", old_pdf_id:"", old_drawing_id:""}</td>
+                <td>Editing a Drawing</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>POST</td>
+                <td>{baseUrl}/drawing/downloaddrawing</td>
+                <td>{project_id:"", drawing_id:"", drawing_file_id:"", download_reason:""}</td>
+                <td>Downloading a Drawing</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>GET</td>
+                <td>{baseUrl}/report/getdownloadlist</td>
+                <td>{none}</td>
+                <td>Reason for Downloading a Drawing</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

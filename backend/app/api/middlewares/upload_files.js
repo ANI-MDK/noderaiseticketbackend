@@ -1,5 +1,5 @@
 const multer    = require("multer")
-const config    = require("./config")
+const config    = require("../../../config/config")
 const path      = require("path")
 
 const storage = multer.diskStorage({
@@ -15,15 +15,19 @@ const storage = multer.diskStorage({
 const uploadFiles = multer({
     storage: storage,
     limits: {
-        fileSize: MAX_FILE_SIZE
+        fileSize: parseInt(config.MAX_FILE_SIZE)
     },
     fileFilter: (req, file, cb) => {
-        if(file.mimetype == 'image/jpg' || file.mimetype == 'image/jpeg' || file.mimetype == 'image/png'){
-            cb(null, true);
+        const allowedMimetypes = [
+            "image/jpg", "image/jpeg", "image/png",
+            "application/pdf"
+        ]
+        if(allowedMimetypes.includes(file.mimetype)) {
+            cb(null, true)
         }
         else{
-            cb(null, false);
-            return cb('Only .png, .jpg and .jpeg format allowed!');
+            cb(null, false)
+            return cb(new Error("Invalid file type. Only JPG, JPEG, PNG and PDF are allowed"))
         }
     }
 })

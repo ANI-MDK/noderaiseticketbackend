@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notification Mail Template</title>
+    <style>
+      html,
+      body {
+        min-height: 100vh;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .mail-header {
+        width: 100%;
+        padding: 25px 0;
+        background-color: #586ce0;
+        text-align: center;
+        color: whitesmoke;
+        font-size: 22px;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+      }
+      .main {
+        position: relative; /* Changed from absolute to relative */
+        background-color: #fff;
+        height: 80%;
+        width: 80%;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 20px 0; /* Added margin for spacing */
+      }
+      .image-holder {
+        display: flex;
+        align-items: center;
+        justify-items: start;
+        font-size: 50px;
+        margin: 0;
+      }
+      .image {
+        transform: rotate(-12deg); /* Updated for proper transformation */
+      }
+      .greet-span {
+        font-size: 18px;
+        padding: 20px 50px;
+        font-weight: 700;
+      }
+      .article {
+        margin-top: 0px;
+        padding: 0 50px;
+        font-size: 18px;
+      }
+      .ticket-title {
+        font-weight: 600;
+      }
+      .link {
+        padding: 10px 8px;
+        background-color: #6ec207;
+        border: 1px solid black;
+        text-decoration: none;
+        color: #fff;
+        letter-spacing: 1px;
+        border-radius: 8px;
+        margin-top: 40px;
+        cursor: pointer;
+      }
+      .no-reply {
+        margin-top: 20px;
+        padding: 0px 50px;
+      }
+      .no-reply-text {
+        font-size: 18px;
+        color: red;
+      }
+      .signature {
+        padding: 0px 50px;
+        margin-bottom: 0px;
+      }
+      .footer {
+        width: 100%;
+        text-align: center;
+        color: gray;
+        letter-spacing: 1px;
+        padding: 2px 0;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrapper">
+      <section class="main">
+        <header class="mail-header">New Ticket Notification</header>
+        <span class="greet-span">Hello Mr. {receiver's name},</span>
+        <article class="article">
+          <p>
+            This mail is to notify that a new ticket has been assigned to
+            you by {assigned person's name}.
+          </p>
+          <p>
+            <span class="ticket-title">Ticket Title: </span>
+            {Title Content}
+            <br />
+            <span class="ticket-title">Ticket Number: </span>
+            {ticket number}
+          </p>
+          <p>For more details, visit the Ticket Raise System</p>
+          <a class="link" href="some address">CLICK HERE</a>
+        </article>
+        <div class="no-reply">
+          <p>
+            N.B:
+            <span class="no-reply-text"
+              >Please don't reply. This is a system-generated email.</span
+            >
+          </p>
+        </div>
+        <p class="signature">Best regards,</p>
+        <p class="signature">DRIL - ROPEWAY HUB</p>
+        <footer class="footer">
+          &copy; 2025 Esteem Infrastructure Pvt Ltd. All rights reserved.
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>

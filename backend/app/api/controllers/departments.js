@@ -2,14 +2,14 @@ const db = require("../../../config/db")
 
 module.exports = {
     getAll: (req, res, next) => {
-        if(global.user_info[0].is_admin_user) {
+        if(global.user_info[0].is_admin_user || global.user_info[0].can_raise_new_ticket) {
             if("departments" == req.params.department_type || "activeDepartments" == req.params.department_type) {
                 let sql = ""
                 switch(req.params.department_type) {
-                    case "departments":         sql = "SELECT d.id AS department_id, d.department_name AS department_name, d.is_active AS is_active, CASE WHEN u.is_active='1' AND u.is_deleted='0' THEN d.current_assigner_id ELSE '0' END AS current_assigner_id, CASE WHEN u.is_active='1' AND u.is_deleted='0' THEN u.user_name ELSE NULL END AS current_assigner_name FROM tbl_departments d LEFT JOIN tbl_users u ON d.current_assigner_id=u.id WHERE d.is_deleted='0'"
+                    case "departments":         sql = "SELECT d.id AS department_id, d.department_name AS department_name, d.is_active AS is_active, CASE WHEN u.is_active='1' AND u.is_deleted='0' THEN d.current_assigner_id ELSE '0' END AS current_assigner_id, CASE WHEN u.is_active='1' AND u.is_deleted='0' THEN u.user_name ELSE NULL END AS current_assigner_name, CASE WHEN u.is_active='1' AND u.is_deleted='0' THEN u.user_email ELSE NULL END AS current_assigner_email, CASE WHEN u.is_active='1' AND u.is_deleted='0' THEN u.department_id ELSE NULL END AS current_assigner_department_id, CASE WHEN u.is_active='1' AND u.is_deleted='0' THEN u.role_id ELSE NULL END AS current_assigner_role_id FROM tbl_departments d LEFT JOIN tbl_users u ON d.current_assigner_id=u.id WHERE d.is_deleted='0'"
                                                 break
 
-                    case "activeDepartments":   sql = "SELECT d.id AS department_id, d.department_name AS department_name, CASE WHEN u.is_active='1' AND u.is_deleted='0' THEN d.current_assigner_id ELSE '0' END AS current_assigner_id, CASE WHEN u.is_active='1' AND u.is_deleted='0' THEN u.user_name ELSE NULL END AS current_assigner_name FROM tbl_departments d LEFT JOIN tbl_users u ON d.current_assigner_id=u.id WHERE d.is_active='1' AND d.is_deleted='0'"
+                    case "activeDepartments":   sql = "SELECT d.id AS department_id, d.department_name AS department_name, CASE WHEN u.is_active='1' AND u.is_deleted='0' THEN d.current_assigner_id ELSE '0' END AS current_assigner_id, CASE WHEN u.is_active='1' AND u.is_deleted='0' THEN u.user_name ELSE NULL END AS current_assigner_name, CASE WHEN u.is_active='1' AND u.is_deleted='0' THEN u.user_email ELSE NULL END AS current_assigner_email, CASE WHEN u.is_active='1' AND u.is_deleted='0' THEN u.department_id ELSE NULL END AS current_assigner_department_id, CASE WHEN u.is_active='1' AND u.is_deleted='0' THEN u.role_id ELSE NULL END AS current_assigner_role_id FROM tbl_departments d LEFT JOIN tbl_users u ON d.current_assigner_id=u.id WHERE d.is_active='1' AND d.is_deleted='0'"
                                                 break
                 }
                 db.query(sql, (err, department_list) => {
@@ -17,6 +17,7 @@ module.exports = {
                         next(err)
                     }
                     else {
+                        // console.log(department_list)
                         res.json({status: "success", message: "Department list", data: department_list})
                     }
                 })

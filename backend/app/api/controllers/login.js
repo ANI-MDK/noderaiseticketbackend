@@ -5,7 +5,8 @@ const config    = require("../../../config/config")
 
 module.exports = {
     authenticate: (req, res, next) => {
-        db.query("SELECT u.id as user_id, u.user_name as user_name, u.user_email as user_email, u.user_password as user_password, u.is_admin_user as is_admin_user, u.can_raise_new_ticket as user_can_raise_new_ticket, u.can_track_all_tickets as user_can_track_all_tickets, u.can_assign_ticket as user_can_assign_ticket, d.department_name as user_department_name, r.role_name as user_role_name FROM tbl_users u LEFT JOIN tbl_departments d ON u.department_id=d.id AND d.is_active='1' AND d.is_deleted='0' LEFT JOIN tbl_roles r ON u.role_id=r.id AND r.is_active='1' AND r.is_deleted='0' WHERE u.user_email="+db.escape(req.body.username)+" AND u.is_active='1' AND u.is_deleted='0'", (err, userInfo) => {
+        db.query("SELECT u.id as user_id, u.user_name as user_name, u.user_email as user_email, u.user_password as user_password, u.department_id as user_department_id, u.is_admin_user as is_admin_user, u.can_raise_new_ticket as user_can_raise_new_ticket, u.can_track_site_tickets as user_can_track_site_tickets, u.can_track_department_tickets as user_can_track_department_tickets, d.department_name as user_department_name, d.current_assigner_id = u.id as is_department_assigner, r.role_name as user_role_name FROM tbl_users u LEFT JOIN tbl_departments d ON u.department_id=d.id AND d.is_active='1' AND d.is_deleted='0' LEFT JOIN tbl_roles r ON u.role_id=r.id AND r.is_active='1' AND r.is_deleted='0' WHERE u.user_email="+db.escape(req.body.username)+" AND u.is_active='1' AND u.is_deleted='0'", (err, userInfo) => {
+            // console.log(userInfo)
             if(err) {
                 next(err)
             }
@@ -39,10 +40,12 @@ module.exports = {
                                     user_name: userInfo.user_name,
                                     user_email: userInfo.user_email,
                                     user_can_raise_new_ticket: userInfo.user_can_raise_new_ticket,
-                                    user_can_track_all_tickets: userInfo.user_can_track_all_tickets,
-                                    user_can_assign_ticket: userInfo.user_can_assign_ticket,
+                                    user_can_track_site_tickets: userInfo.user_can_track_site_tickets,
+                                    user_can_track_department_tickets: userInfo.user_can_track_department_tickets,
                                     is_admin_user: userInfo.is_admin_user,
+                                    user_department_id: ("1" != userInfo.is_admin_user) ? userInfo.user_department_id : "0",
                                     user_department_name: ("1" != userInfo.is_admin_user) ? userInfo.user_department_name : "Admin",
+                                    is_department_assigner: ("1" != userInfo.is_admin_user) ? userInfo.is_department_assigner : "0",
                                     user_role_name: ("1" != userInfo.is_admin_user) ? userInfo.user_role_name : "Admin",
                                     associatedSite: associatedSiteList
                                 }
