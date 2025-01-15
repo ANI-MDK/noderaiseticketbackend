@@ -25,7 +25,7 @@ app.listen(PORT, () => {
 global.user_info = null
 
 app.use(cors({
-    origin: ["http://192.168.1.81:5172","http://192.168.1.128:5172","http://192.168.1.238:5172"],
+    origin: ["http://192.168.1.128:5172"],
     exposedHeaders: ["Authorization"],
     credentials: true,
     methods: ["GET","POST","PUT"]
