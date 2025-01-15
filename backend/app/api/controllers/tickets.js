@@ -22,7 +22,9 @@ const removeUploadedFiles = (files) => {
     }
     else {
         files.forEach((file) => {
-            fs.unlinkSync(file.path)
+            if(fs.existsSync(file.path)) {
+                fs.unlinkSync(file.path)
+            }
         })
     }
 }
