@@ -1,0 +1,52 @@
+REST API using Node, Express, JWT and Mongo
+============================================
+1. Install nodejs, npm and mongo
+2. Open terminal and navigate to directory where you want your application to stay and follow following steps:
+	mkdir node-rest-api-jwt
+	cd node-rest-api-jwt
+	npm init
+3. Now install following dependencies:
+	npm install bcrypt body-parser express jsonwebtoken mongoose morgan rotating-file-stream cors dotenv --save
+	npm install nodemon -g
+
+	bcrypt :- hash your plain password and store hashed password in database
+	body-parser :- Parse incoming request bodies in a middleware before your handlers, available under the req.body property
+	express :- Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile 		   applications.
+	jsonwebtoken :- JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting 			information between parties as a JSON object.
+	mongoose :- Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
+	morgan :- HTTP request logger middleware for node.js
+	rotating-file-stream :- Opens a stream. Writable to a file rotated by interval and/or size. A logrotate alternative.
+	cors :- CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
+	dotenv :- Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env
+	nodemon :- nodemon will watch the files in the directory in which nodemon was started, and if any files change, nodemon will automatically 		   	   restart your node application.
+4. Move to root folder of the application i.e node-rest-api-jwt and create following directory:
+	cd node-rest-api-jwt
+	mkdir app
+	cd app
+	mkdir api
+	cd api
+	mkdir controllers
+	mkdir models
+	(We will follow MVC pattern so our application controllers and models files will be stored in app/api/controllers, app/api/models respective 	directories.)
+5. create folder config inside application root directory.
+	mkdir config
+	(We will store our database configuration file in config folder. i.e node-rest-api-jwt/config)
+6. Next we will create route folder inside our application root directory where all of our application related routes files will be created.
+	mkdir routes
+7. Now create node server, create a file server.js inside directory node-rest-api-jwt
+8. To start the application, open terminal and from application root folder fire following command:
+	nodemon server.js
+9. Now open browser and type http://localhost:3000/
+
+How to store all collections of mongo db to a specific folder
+==============================================================
+1. Create a folder where you want to store your collection.
+2. Now open terminal navigate to mongo folder where you have installed mostly it will be in "C:\Program Files\MongoDB\Server\7.0\bin"
+3. Run the following command:
+	mongod --dbpath C:\Program Files\MongoDB\Server\7.0\data
+	(This command will start MongoDB server and store all your collection in "C:\Program Files\MongoDB\Server\7.0\data")
+
+Links
+======
+1. https://medium.com/zero-equals-false/building-a-restful-crud-api-with-node-js-jwt-bcrypt-express-and-mongodb-4e1fb20b7f3d
+2. https://www.geeksforgeeks.org/how-to-install-mongodb-on-windows/

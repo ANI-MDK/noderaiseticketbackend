@@ -1,0 +1,35 @@
+/* For Small Laptops (1024px and up) */
+@media (min-width: 1024px) {
+    .search-icon {
+      right: calc(30% + 10px); /* Positioning based on 1024px screen width */
+    }
+  }
+  
+  /* For Medium Laptops (1280px and up) */
+  @media (min-width: 1280px) {
+    .search-icon {
+      right: calc(20% + 25px); /* Adjust position for slightly wider screens */
+    }
+  }
+  
+  /* For Laptops with higher resolution (1366px and up) */
+  @media (min-width: 1366px) {
+    .search-icon {
+      right: calc(20% + 10px); /* Larger resolution for widescreen laptops */
+    }
+  }
+  
+  /* For Larger Laptops (1440px and up) */
+  @media (min-width: 1440px) {
+    .search-icon {
+      right: calc(20% + 2px); /* More space for very large screens */
+    }
+  }
+  
+  /* For 2X Larger Laptops (1536px and up) */
+  @media (min-width: 1536px) {
+    .search-icon {
+      right: calc(15% + 30px); /* Even larger screens like high-end devices */
+    }
+  }
+  

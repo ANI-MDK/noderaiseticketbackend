@@ -1,0 +1,33 @@
+Url :- https://www.hapihhost.in/billing/index.php?rp=/login
+
+Username :- subrata@dril.net.in
+
+Password :- Techn0l0gy$$
+
+VPS Node Details for old ticketing
+++++++++++++++++++++++++++++++++++
+
+Product Name: FMV IN 6
+Hostname: drilticketing
+Main IP: 103.160.144.193
+Username: root
+Password: &01OPK8(@$jo
++++++++++++++++++++++++++++++++++++
+
+How to Connect RDP: https://www.hapihhost.in/blog/how-to-connect-rdp-remote-desktop-server-in-windows-vps/
+
+How to SSH VPS: https://www.hapihhost.in/blog/how-to-connect-linux-vps-using-putty/
+
+FTP Details
+===========
+Use sftp
+User / Password: ftpuser / ftp@user
+Then go to the /var/www/htmp folder
+
+MySQL Details
+=============
+User name: root
+Password: &Dril#9@2024
+DB name: ropeways_main
+
+http://103.160.144.193/

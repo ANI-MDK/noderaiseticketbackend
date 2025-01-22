@@ -1,0 +1,47 @@
+/* For Medium Laptops (1024px to 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .main {
+    margin-top: 5%;
+    margin-left: 25%; /* Positioning for screens between 1024px and 1279px */
+  }
+}
+
+/* For Medium Laptops (1280px to 1365px) */
+@media (min-width: 1280px) and (max-width: 1365px) {
+  .main {
+    margin-top: 5%;
+    margin-left: 21.2%; /* Adjust position for slightly wider screens */
+  }
+}
+
+/* For Laptops with higher resolution (1366px to 1439px) */
+@media (min-width: 1366px) and (max-width: 1439px) {
+  .main {
+    margin-top: 5%;
+    margin-left: 21.5%; /* Larger resolution for widescreen laptops */
+  }
+}
+
+/* For Larger Laptops (1440px to 1535px) */
+@media (min-width: 1440px) and (max-width: 1535px) {
+  .main {
+    margin-top: 5%;
+    margin-left: 21.5%; /* More space for very large screens */
+  }
+}
+
+/* For 2X Larger Laptops (1536px to 1599px) */
+@media (min-width: 1536px) and (max-width: 1599px) {
+  .main {
+    margin-top: 4%;
+    margin-left: 15.5%; /* Even larger screens like high-end devices */
+  }
+}
+
+/* For Extra Large Screens (1600px and up) */
+@media (min-width: 1600px) {
+  .main {
+    margin-top: 4%;
+    margin-left: 15.5%; /* For very large screens like ultra-wide monitors */
+  }
+}

@@ -1,0 +1,12 @@
+Raise ticket info
+=================
+Login URL: https://27.100.38.4:2087/
+Username: root
+Password: kYMZ.1G(bv19j9
+
+Domain name: eidesk.in
+
+DB info (using phpmyadmin)
+==========================
+user: root
+password: R@ise#Ticket2025

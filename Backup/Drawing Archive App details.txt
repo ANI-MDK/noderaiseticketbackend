@@ -1,0 +1,52 @@
+Drawing Archive Application server details:-
+
+Ubuntu 24.04 login via SSH
+==========================
+Login as user:
+Host: 192.168.1.20
+Username: user
+Password: redhat@321
+
+After login as user: Type "su -". It will move to "root" and ask for root password.
+Root password: redhat@321
+
+MySQL 8 Server Details
+======================
+Login via HeidiSQL:
+Network: MariaDB or MySQL (TCP/IP)
+Library: libmariadb.dll
+Host: 192.168.1.20
+User: root
+Password: root
+
+File upload and download method
+===============================
+Using WinSCP:
+Protocol: SCP
+Host: 192.168.1.20
+Port: 22
+Username: user
+Password: redhat@321
+
+Temp Frontend location
+======================
+/home/user/frontend
+
+Permanent Backend location
+==========================
+/home/user/backend
+
+Method
+======
+After uploading the frontend code (except node-module) inside /home/user/frontend follow the steps below:
+Login to the server via SSH
+Go to root
+run "cd /home/user/frontend"
+run "npm install"
+run "npm run build"
+(to delete already exist "frontend" inside "/var/www/html", run "sudo rm -r /var/www/html/frontend"
+run "sudo mv build /var/www/html/frontend"
+
+After uploading the backend code (except node-module) inside /home/user/backend follow thw steps below:
+run "cd /home/user/backend"
+run "npm install"

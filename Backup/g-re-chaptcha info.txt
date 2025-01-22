@@ -1,0 +1,16 @@
+G-re-chaptcha info - ONM
+=========================
+Site Key
+6LfNC4EmAAAAAELpf0G170M-sOMiNevzKwpYQFya
+
+Secret Key
+6LfNC4EmAAAAALd0r1QQ7smsSUp4u70xTEZQcH60
+
+
+G-re-chaptcha info - Inspection
+===============================
+Site Key
+6LfGSnopAAAAALlJ95StIyVgAFORZajlgQy1Gj8O
+
+Secret Key
+6LfGSnopAAAAADlQVnPC1W1ZaHxHoWNZzy7zw9xe

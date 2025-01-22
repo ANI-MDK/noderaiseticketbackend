@@ -1,0 +1,57 @@
+https://myorders.bigrock.in/login (Hosting and Domain)
+======================================================
+ropewayshub@gmail.com / Techn0l0gy#
+
+http://116.206.105.14/cpanel or http://cpanel.ropewayhub.com/ AND https://md-in-70.webhostbox.net:2083/cpsess6276986385/3rdparty/phpMyAdmin/index.php (phpMyAdmin)
+=====================================================================================================================================================
+ropewy6y / W@yRope#14
+
+Domain
+======
+https://ropewayhub.com/
+
+To enter https://ropewayhub.com/ need to enter user name and password
+=====================================================================
+ropewayhubdev / Dril@Dev
+
+FTP Details
+===========
+FTP Username / Password: ropewy6y / W@yRope#14
+FTP server: ftp.ropewayhub.com
+Host: ropewayhub.com
+FTP & explicit FTPS port:  21
+Encryption: Use explicit FTP over TLS if available
+Transfer settings: Default
+Charset: Autodetect
+
+DB Details
+==========
+DB Name: ropewy6y_dril_onm
+Username / Password: ropewy6y_rootonm / 0nm#rOOt@3745
+
+============================================================================================================================================
+============================================================================================================================================
+
+OLD: https://www.hosting.co.in/customer/login.php
+NEW: https://www.hostingraja.in/login/clientarea.php (Hosting)
+==============================================================
+ropewayshub@gmail.com / Techn0l0gy#
+
+Domain
+======
+http://ropewayhub.in/
+
+FTP Details (for codebase)
+==============================================================================
+FTP Username / Password: test@ropewayhub.in / RopeW@yDril
+FTP server: ftp.ropewayhub.in
+Host: ropewayhub.in / s3606.bom1.stableserver.net
+FTP & explicit FTPS port:  21
+Encryption: Use explicit FTP over TLS if available
+Transfer settings: Default
+Charset: Autodetect
+
+DB Details
+==========
+DB Name: ropewayh_dril_onm
+Username / Password: ropewayh_rootonm / 0nm#rOOt@3745
