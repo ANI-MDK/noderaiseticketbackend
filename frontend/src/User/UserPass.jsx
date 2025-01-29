@@ -112,7 +112,7 @@ const UserPass = () => {
                   New Password:
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Enter a strong password"
                   className="w-full border-[1px] border-[#c5c5c580] py-1 px-3 outline-[#F8E1B7] col-span-2 rounded-md"
                   onChange={onChangeHandler}
@@ -129,7 +129,7 @@ const UserPass = () => {
                   Confirm New Password:
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Re-enter password"
                   className="w-full border-[1px] border-[#c5c5c580] py-1 px-3 outline-[#F8E1B7] col-span-2 rounded-md"
                   onChange={onChangeHandler}

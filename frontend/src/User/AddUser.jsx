@@ -451,6 +451,7 @@ const AddUser = () => {
                     (i) Can Raise Tickets:
                   </label>
                   <div
+                    onClick={handleRaiseTicket}
                     className={`${
                       raiseTicket ? "bg-green-500" : "bg-red-500"
                     } h-[20px] w-[40px] rounded-full flex items-center ${
@@ -463,7 +464,7 @@ const AddUser = () => {
                       } relative my-auto`}
                     >
                       <button
-                        onClick={handleRaiseTicket} // Handle toggle state change on div click
+                        // onClick={handleRaiseTicket} // Handle toggle state change on div click
                         type="button"
                         name="can_raise_new_ticket"
                         value={raiseTicket}
@@ -481,6 +482,7 @@ const AddUser = () => {
                     (ii) Can Track Site Generated Tickets:
                   </label>
                   <div
+                    onClick={handleTrackSiteTicket}
                     className={`${
                       trackSiteTicket ? "bg-green-500" : "bg-red-500"
                     } h-[20px] w-[40px] rounded-full flex items-center ${
@@ -493,7 +495,7 @@ const AddUser = () => {
                       } relative my-auto`}
                     >
                       <button
-                        onClick={handleTrackSiteTicket} // Handle toggle state change on div click
+                        // onClick={handleTrackSiteTicket} // Handle toggle state change on div click
                         type="button"
                         name="can_track_site_tickets"
                         onChange={onChangeHandler}
@@ -510,6 +512,7 @@ const AddUser = () => {
                     (iii) Can Track Departmental Tickets:
                   </label>
                   <div
+                    onClick={handleTrackDeptTicket}
                     className={`${
                       trackDeptTicket ? "bg-green-500" : "bg-red-500"
                     } h-[20px] w-[40px] rounded-full flex items-center ${
@@ -522,7 +525,7 @@ const AddUser = () => {
                       } relative my-auto`}
                     >
                       <button
-                        onClick={handleTrackDeptTicket} // Handle toggle state change on div click
+                        // onClick={handleTrackDeptTicket} // Handle toggle state change on div click
                         type="button"
                         name="can_track_department_tickets"
                         onChange={onChangeHandler}
