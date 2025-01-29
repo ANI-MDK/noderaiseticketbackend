@@ -25,7 +25,7 @@ app.listen(PORT, () => {
 global.user_info = null
 
 app.use(cors({
-    origin: ["http://192.168.1.128:5172"],
+    origin: ["https://eidesk.in"],
     exposedHeaders: ["Authorization"],
     credentials: true,
     methods: ["GET","POST","PUT"]

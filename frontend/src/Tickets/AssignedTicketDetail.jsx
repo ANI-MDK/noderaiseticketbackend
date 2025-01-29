@@ -383,7 +383,7 @@ const AssignedTicketDetail = () => {
                               return (
                                 <div className="inline-flex items-center gap-[4px] ml-2  mr-2 text-sm text-black cursor-pointer" key={indx}>
                                   <span className="text-blue-400 -mr-1">{<GiPaperClip />}</span>
-                                  <span className="text-xs"><a href={`http://192.168.1.127:5000/uploads/${link}`} target="_blank" id={id} rel="noopener noreferrer"><span className="absolute left-1/2 bottom-full hidden max-w-xs -translate-x-1/2 whitespace-normal rounded bg-gray-500 bg-opacity-80 text-white text-sm p-1 group-hover:block">{fileName}</span>{fileName.substring(0, 7)}</a></span>
+                                  <span className="text-xs"><a href={`${apiUrl}/uploads/${link}`} target="_blank" id={id} rel="noopener noreferrer"><span className="absolute left-1/2 bottom-full hidden max-w-xs -translate-x-1/2 whitespace-normal rounded bg-gray-500 bg-opacity-80 text-white text-sm p-1 group-hover:block">{fileName}</span>{fileName.substring(0, 7)}</a></span>
                                 </div>
                               );
                             })) 

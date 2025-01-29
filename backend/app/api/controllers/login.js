@@ -1,4 +1,4 @@
-// const axios     = require("axios")
+const axios     = require("axios")
 const db        = require("../../../config/db")
 const bcrypt    = require("bcrypt")
 const jwt       = require("jsonwebtoken")
@@ -6,17 +6,17 @@ const config    = require("../../../config/config")
 
 module.exports = {
     authenticate: async (req, res, next) => {
-        // const token = req.body.token
-        // if(token === undefined || token === "" || token === 0) {
-        if(false) {
+        const token = req.body.token
+        // if(false) {
+        if(token === undefined || token === "" || token === 0) {
             res.json({status: "error", message: "Something went wrong. Login unavailable"})
         }
         else {
             try {
-                // const response = await axios.post(`${config.VERIFICATION_URL}?secret=${config.RECAPTCHA_SECRET}&response=${token}`)
-                // const { success, score } = response.data
-                // if(!success && score < 0.3) {
-                if(false) {
+                const response = await axios.post(`${config.VERIFICATION_URL}?secret=${config.RECAPTCHA_SECRET}&response=${token}`)
+                const { success, score } = response.data
+                // if(false) {
+                if(!success && score < 0.3) {
                     res.json({status: "error", message: "Auth failed. Login unavailable"})
                 }
                 else {
@@ -78,7 +78,7 @@ module.exports = {
                 }
             }
             catch (error) {
-                res.json({status: "error", message: "Auth failed 2. Login unavailable"})
+                res.json({status: "error", message: "Auth failed. Login unavailable"})
             }
         }
     }

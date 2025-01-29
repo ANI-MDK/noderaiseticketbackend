@@ -170,55 +170,55 @@ const AddUser = () => {
       return toast.info("Please Enter password");
     }
 
-    // if (formData.user_password === formData.cnf_password) {
-    //   try {
-    //     const res = await axios.post(
-    //       url,
-    //       {
-    //         user_name: formData.user_name,
-    //         user_email: formData.user_email,
-    //         user_password: formData.user_password,
-    //         can_raise_new_ticket: raiseTicket ? 1 : 0,
-    //         can_track_site_tickets: trackSiteTicket ? 1 : 0,
-    //         can_track_department_tickets: trackDeptTicket ? 1 : 0,
-    //         department_id: formData.department_id,
-    //         role_id: formData.role_id,
-    //         associated_sites: formData.associated_sites,
-    //       },
-    //       {
-    //         headers: {
-    //           "Content-Type": "application/json",
-    //           Authorization: `Bearer ${token}`,
-    //         },
-    //       }
-    //     );
+    if (formData.user_password === formData.cnf_password) {
+      try {
+        const res = await axios.post(
+          url,
+          {
+            user_name: formData.user_name,
+            user_email: formData.user_email,
+            user_password: formData.user_password,
+            can_raise_new_ticket: raiseTicket ? 1 : 0,
+            can_track_site_tickets: trackSiteTicket ? 1 : 0,
+            can_track_department_tickets: trackDeptTicket ? 1 : 0,
+            department_id: formData.department_id,
+            role_id: formData.role_id,
+            associated_sites: formData.associated_sites,
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
-    //     if (res.data.status === "success") {
-    //       console.log(res);
-    //       toast.success(res.data.message, {
-    //         icon: true,
-    //         position: "top-right",
-    //         hideProgressBar: true,
-    //       });
-    //       setTimeout(() => {
-    //         navigate("/allusers");
-    //       }, 6000);
-    //     } else {
-    //       toast.error(res.data.message, {
-    //         hideProgressBar: true,
-    //         position: "top-right",
-    //       });
-    //       console.log(res.data.message);
-    //     }
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // } else {
-    //   toast.error("Password doesn't match !", {
-    //     hideProgressBar: true,
-    //     position: "top-right",
-    //   });
-    // }
+        if (res.data.status === "success") {
+          // console.log(res);
+          toast.success(res.data.message, {
+            icon: true,
+            position: "top-right",
+            hideProgressBar: true,
+          });
+          setTimeout(() => {
+            navigate("/allusers");
+          }, 6000);
+        } else {
+          toast.error(res.data.message, {
+            hideProgressBar: true,
+            position: "top-right",
+          });
+          // console.log(res.data.message);
+        }
+      } catch (error) {
+        // console.log(error);
+      }
+    } else {
+      toast.error("Password doesn't match !", {
+        hideProgressBar: true,
+        position: "top-right",
+      });
+    }
   };
 
   const handleReset = () => {

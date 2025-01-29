@@ -493,7 +493,7 @@ const TicketDetails = () => {
                                   </span>
                                   <span className="text-xs relative group">
                                     <a
-                                      href={`http://192.168.1.127:5000/uploads/${link}`}
+                                      href={`${apiUrl}/uploads/${link}`}
                                       target="_blank"
                                       rel="noopener noreferrer"
                                     ><span className="absolute left-1/2 bottom-full hidden max-w-xs -translate-x-1/2 whitespace-normal rounded bg-gray-500 bg-opacity-80 text-white text-sm p-1 group-hover:block">{fileName}</span>
